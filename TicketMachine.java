@@ -17,11 +17,13 @@ public class TicketMachine
     private int balance;
     // The total amount of money collected by this machine.
     private int total;
+    
+    private String premio;
 
     /**
      * Create a machine that issues tickets of the given price.
      */
-    public TicketMachine(int cost)
+    public TicketMachine(int cost, String premio)
     {
         price = cost;
         balance = 0;
@@ -80,6 +82,13 @@ public class TicketMachine
             total = total + price;
             // Reduce the balance by the prince.
             balance = balance - price;
+            
+            if(premio == premio){
+                System.out.println("#############");
+                System.out.println("Billete premiado");
+                System.out.println("#############");
+            }
+            
         }
         else {
             System.out.println("You must insert at least: " +
