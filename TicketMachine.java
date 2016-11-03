@@ -102,9 +102,14 @@ public class TicketMachine
     
     public int emptyMachine()
     {
-        int amountToRefund;
-        amountToRefund = total;
-        total = 0;
-        return amountToRefund;
+        if(balance > 0){
+            return -1;
+        }
+        else {
+            int amountToRefund;
+            amountToRefund = total;
+            total = 0;
+            return amountToRefund;
+        }
     }
 }
